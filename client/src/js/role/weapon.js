@@ -125,6 +125,7 @@ export class Rifle extends Weapon {
                 Rifle.rifleModelList['m4a1'] = object;
                 resolve(object);
             })
+
         });
     }
 

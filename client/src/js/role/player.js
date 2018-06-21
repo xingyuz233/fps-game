@@ -449,7 +449,8 @@ export class Player {
         let loader = new FBXLoader();
         let model;
 
-        let p = new Promise((resolve, reject) => {
+
+        return new Promise((resolve, reject) => {
             loader.load('static/models/player/swat/swat.fbx', function (object) {
                 console.log(object);
                 model = object;
@@ -459,98 +460,6 @@ export class Player {
                         child.receiveShadow = true;
                     }
                 } );
-                resolve("ok");
-            });
-        });        /*
-
-        let p0 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Idle.fbx', function (object) {
-                model = object;
-                object.traverse( function ( child ) {
-                    if ( child.isMesh ) {
-                        child.castShadow = true;
-                        child.receiveShadow = true;
-                    }
-                } );
-                resolve(object.animations[0]);
-            });
-        });
-        let p1 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Forward.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p2 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Backwards.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p3 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Left.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p4 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Right.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p5 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Forward Left.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p6 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Forward Right.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p7 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Backward Left.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p8 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Run Backward Right.fbx', function (object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p9 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Firing Rifle.fbx', function(object) {
-                resolve(object.animations[0]);
-            })
-        });
-        let p10 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Death From The Front.fbx', function(object) {
-                resolve(object.animations[0]);
-            })
-        });
-        let p11 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Death From The Back.fbx', function(object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p12 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Death From Front Headshot.fbx', function(object) {
-                resolve(object.animations[0]);
-            });
-        });
-        let p13 = new Promise((resolve, reject) => {
-            loader.load('static/models/player/swat/Death From Back Headshot.fbx', function(object) {
-                resolve(object.animations[0]);
-            });
-        });
-
-        */
-        return Promise.all([p]).then(function (results) {
-            return new Promise((resolve, reject) => {
-                console.log(results);
-                /*
-                for (let i = 0; i < results.length; i++) {
-                    model.animations[i] = results[i];
-                }
-                */
-                //model.rotateY(Math.PI);
                 model.scale.set(0.05, 0.05, 0.05);
                 //model.rotateY(Math.PI);
                 //Player.modelList['swat'] = model;
@@ -566,6 +475,31 @@ export class Player {
                 resolve(model);
             });
         });
+        // return Promise.all([p]).then(function (results) {
+        //     return new Promise((resolve, reject) => {
+        //         console.log(results);
+        //         /*
+        //         for (let i = 0; i < results.length; i++) {
+        //             model.animations[i] = results[i];
+        //         }
+        //         */
+        //         //model.rotateY(Math.PI);
+        //         model.scale.set(0.05, 0.05, 0.05);
+        //         //model.rotateY(Math.PI);
+        //         //Player.modelList['swat'] = model;
+        //         console.log(model);
+        //
+        //         model.shoulder = model.children[8].children[1].children[1].children[1];
+        //         console.log(model.shoulder);
+        //         model.righthand = model.children[8].children[1].children[1].children[1].
+        //             children[3].children[1].children[1].children[1];
+        //         model.height = 170;
+        //
+        //         Player.initialActions(model);
+        //         resolve(model);
+        //     });
+        // });
+        //
     }
 
 
