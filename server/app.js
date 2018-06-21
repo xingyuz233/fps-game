@@ -3,6 +3,7 @@ const Koa = require('koa');
 const app = new Koa();
 
 const server = app.listen(3000);
+server.setTimeout(0);
 const io = require('socket.io').listen(server);
 
 let Player = require("./bean/player");
