@@ -144,6 +144,7 @@ export class Player {
     initialModel(modelName, position) {
         let scope = this;
         let promise;
+        console.log(modelName);
         switch (modelName) {
             case 'swat':
                 promise = Player.loadSwatModel().then(model => {
