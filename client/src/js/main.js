@@ -493,6 +493,7 @@ socket.on('init', data => {
         keyController = new KeyController(player, scene);
         collisionController = new CollisionController(keyController, scene);
         animate();
+        console.log("initial finished!");
         socket.emit('addPlayer', player.toObject());
     });
 
