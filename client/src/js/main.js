@@ -38,7 +38,7 @@ let player;
 
 let gameMap;
 
-const connectionUrl = "localhost:3000";
+const connectionUrl = "http://120.79.227.127:3000";
 let socket = io.connect(connectionUrl);
 let playerMap = new Map();
 
